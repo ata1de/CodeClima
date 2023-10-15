@@ -16,7 +16,7 @@ body{
 .container{
     background-color: #5B7E8C;
     color: white;
-    height: 350px;
+    height: 380px;
     border-radius: 10px;
     box-shadow: rgba(0,0,0,0.24) 0px 3px 8px;
 }
@@ -70,5 +70,13 @@ body{
 
 .umidity-container{
     display: flex;
-    margin-top: 30px;
+    margin: 20px;
+}
+
+.umidity{
+    padding: 10px;
+}
+
+.wind{
+    padding: 10px;
 }
