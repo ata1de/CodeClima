@@ -17,6 +17,7 @@ const cityUmidity = document.querySelector(".humidity span")
 const cityWind = document.querySelector(".wind span")
 const tempMax = document.querySelector(".temp-max span")
 const tempMin = document.querySelector(".temp-min span")
+const WeatherData = document.querySelector(".hide")
 
 //functions
 //Função assincrona pois ela pode demorar um tempo para responder
@@ -31,6 +32,13 @@ const getWetherData = async(city) =>{
 }
 
 
+const switchClass = () => {
+    if (WeatherData.classList.contains("hide")) {
+        WeatherData.classList.toggle("weather-data")
+    } else if(WeatherData.className === ""){
+        WeatherData.classList.toggle("weather-data")
+    }
+}
 
 const dataWeather = async(city) =>{
     const data = await getWetherData(city);
@@ -54,6 +62,8 @@ const dataWeather = async(city) =>{
     document.body.style.backgroundRepeat = 'no-repeat';
     document.body.style.backgroundPosition = 'center';
 
+    WeatherData.classList.remove("hide")
+
 }
 
 const ImageWeather = async(city) =>{
@@ -72,6 +82,7 @@ searchBtn.addEventListener("click", (e) =>{
     const city = cityInput.value;
 
     dataWeather(city);
+    switchClass();
 })
 
 cityInput.addEventListener("keyup", (e) =>{
@@ -79,5 +90,6 @@ cityInput.addEventListener("keyup", (e) =>{
         const city = e.target.value;
 
         dataWeather(city);
+        switchClass();
     }
 })
