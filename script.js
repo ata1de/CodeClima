@@ -1,10 +1,13 @@
-//variables
+//variables api's
 const apiKey =  "f23e435017d6ee279843c3b207b5f0b6"
 const apiCountry = "https://flagsapi.com//flat/64.png"
+const apiKeyImage = "QHQ5-anRLPzgtiME4fbBD26yvpZ77T_KoByLx_UTLGQ"
 
+//const principals
 const cityInput = document.querySelector("#city-input")
 const searchBtn = document.querySelector("#search")
 
+//variables
 const cityElement = document.querySelector("#nameCity")
 const countyImg = document.querySelector(".country-img")
 const temperature = document.querySelector(".temperature span")
@@ -29,6 +32,7 @@ const getWetherData = async(city) =>{
 
 const dataWeather = async(city) =>{
     const data = await getWetherData(city);
+    const dataImg = await ImageWeather(city)
 
     cityElement.innerText = data.name;
     temperature.innerText = parseInt(data.main.temp);
@@ -42,6 +46,20 @@ const dataWeather = async(city) =>{
     const iconData = data.weather[0].icon
     icon.src = `http://openweathermap.org/img/wn/${iconData}@2x.png`
 
+    document.body.style.backgroundImage = `url(${dataImg.urls.full})`;
+    document.body.style.backgroundSize = 'cover';
+    document.body.style.backgroundRepeat = 'no-repeat';
+    document.body.style.backgroundPosition = 'center';
+
+}
+
+const ImageWeather = async(city) =>{
+    const apiImageURL = `https://api.unsplash.com/photos/random?query=${city}&client_id=${apiKeyImage}`
+
+    const response =  await fetch(apiImageURL)
+    const dataImg = await response.json()
+
+    return dataImg
 }
 
 //events 

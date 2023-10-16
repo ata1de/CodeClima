@@ -89,6 +89,11 @@ body{
     align-items: center;
 }
 
+.description{
+    font-weight: bold;
+    text-transform: capitalize;
+}
+
 .umidity-container{
     display: flex;
     margin: 20px;
