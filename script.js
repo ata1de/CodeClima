@@ -56,10 +56,10 @@ const dataWeather = async(city) =>{
 const ImageWeather = async(city) =>{
     const apiImageURL = `https://api.unsplash.com/photos/random?query=${city}&client_id=${apiKeyImage}`
 
-    const response =  await fetch(apiImageURL)
-    const dataImg = await response.json()
+    const response =  await fetch(apiImageURL);
+    const dataImg = await response.json();
 
-    return dataImg
+    return dataImg;
 }
 
 //events 
@@ -68,5 +68,13 @@ searchBtn.addEventListener("click", (e) =>{
 
     const city = cityInput.value;
 
-    dataWeather(city)
+    dataWeather(city);
+})
+
+cityInput.addEventListener("keyup", (e) =>{
+    if (e.code === "Enter"){
+        const city = e.target.value;
+
+        dataWeather(city);
+    }
 })
