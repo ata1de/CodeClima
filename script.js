@@ -13,8 +13,10 @@ const countyImg = document.querySelector(".country-img")
 const temperature = document.querySelector(".temperature span")
 const description = document.querySelector(".description")
 const icon = document.querySelector(".weather-icon")
-const cityUmidity = document.querySelector(".umidity span")
+const cityUmidity = document.querySelector(".humidity span")
 const cityWind = document.querySelector(".wind span")
+const tempMax = document.querySelector(".temp-max span")
+const tempMin = document.querySelector(".temp-min span")
 
 //functions
 //Função assincrona pois ela pode demorar um tempo para responder
@@ -38,11 +40,12 @@ const dataWeather = async(city) =>{
     temperature.innerText = parseInt(data.main.temp);
     description.innerText = data.weather[0].description;
     cityUmidity.innerText = parseInt(data.main.humidity) + "%";
-    cityWind.innerText = parseInt(data.wind.speed) + "km/hr";
+    cityWind.innerText = parseFloat(data.wind.speed * 3,6).toFixed(0) + "km/hr";
+    tempMax.innerText = parseInt(data.main.temp_max);
+    tempMin.innerText = parseInt(data.main.temp_min);
 
     const countryData = data.sys.country
     countyImg.src = `https://flagsapi.com/${countryData}/flat/64.png`
-
     const iconData = data.weather[0].icon
     icon.src = `http://openweathermap.org/img/wn/${iconData}@2x.png`
 

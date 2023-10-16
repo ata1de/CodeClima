@@ -94,19 +94,26 @@ body{
     text-transform: capitalize;
 }
 
-.umidity-container{
+.humidity-container{
     display: flex;
     margin: 20px;
     align-items: center;
     justify-content: center;
 }
 
-.umidity-container .umidity{
+.humidity-container .humidity-max{
     border-right: 1px solid white;
     margin: 0.6rem;
-    padding: 0.6rem;
+    padding: 0.7rem;
 }
 
+.humidity{
+    margin-bottom: 0.3rem;
+}
+
+.wind{
+    margin-bottom: 0.3rem;
+}
 .hide{
     display: none;
 }
