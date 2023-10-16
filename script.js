@@ -6,12 +6,12 @@ const cityInput = document.querySelector("#city-input")
 const searchBtn = document.querySelector("#search")
 
 const cityElement = document.querySelector("#namecity")
-const cityElement = document.querySelector("#namecity")
-const cityElement = document.querySelector("#namecity")
-const cityElement = document.querySelector("#namecity")
-const cityElement = document.querySelector("#namecity")
-const cityElement = document.querySelector("#namecity")
-const cityElement = document.querySelector("#namecity")
+const countyImg = document.querySelector(".country-img")
+const temperature = document.querySelector(".temperature")
+const description = document.querySelector(".description")
+const icon = document.querySelector(".weather-icon")
+// const cityElement = document.querySelector("#namecity")
+// const cityElement = document.querySelector("#namecity")
 
 //functions
 const dataWeather = (city) =>{
