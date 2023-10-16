@@ -10,12 +10,22 @@ const countyImg = document.querySelector(".country-img")
 const temperature = document.querySelector(".temperature")
 const description = document.querySelector(".description")
 const icon = document.querySelector(".weather-icon")
-// const cityElement = document.querySelector("#namecity")
-// const cityElement = document.querySelector("#namecity")
+const cityUmidity = document.querySelector(".umidity span")
+const cityWind = document.querySelector(".wind span")
 
 //functions
+//Função assincrona pois ela pode demorar um tempo para responder
+const getWetherData = async(city) =>{
+    const apiWeatherURL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}&lang=pt_br`;
+
+    const res = await fetch(apiWeatherURL);
+    const data = await res.json();
+
+    console.log(data)
+}
+
 const dataWeather = (city) =>{
-    console.log(city)
+    getWetherData(city)
 }
 
 //events 
