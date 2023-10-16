@@ -96,10 +96,12 @@ body{
     justify-content: center;
 }
 
-.umidity{
-    padding: 10px;
+.umidity-container .umidity{
+    border-right: 1px solid white;
+    margin: 0.6rem;
+    padding: 0.6rem;
 }
 
-.wind{
+/* .wind{
     padding: 10px;
-}
+} */
