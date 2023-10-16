@@ -16,7 +16,7 @@ body{
 .container{
     background-color: #5B7E8C;
     color: white;
-    height: 380px;
+    /* height: 380px; */
     border-radius: 10px;
     box-shadow: rgba(0,0,0,0.24) 0px 3px 8px;
 }
@@ -57,6 +57,26 @@ body{
     align-items: center;   
 }
 
+.weather-data h2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.6rem;
+    margin-bottom: 1rem;  
+}
+
+.weather-data h2 i{
+    font-size: 1rem;
+}
+
+.country-img{
+    width: 28px;
+}
+
+.weather-icon{
+    width: 28px;
+}
+
 .temperature{
     font-weight: bold;
     font-size: 50px;
@@ -65,12 +85,15 @@ body{
 
 .descript-container {
     display: flex;
-    margin-top: 10px;
+    margin: 1rem;
+    align-items: center;
 }
 
 .umidity-container{
     display: flex;
     margin: 20px;
+    align-items: center;
+    justify-content: center;
 }
 
 .umidity{
