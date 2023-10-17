@@ -1,7 +1,7 @@
 //variables api's
-const apiKey =  "f23e435017d6ee279843c3b207b5f0b6"
+const apiKey =  ""
 const apiCountry = "https://flagsapi.com//flat/64.png"
-const apiKeyImage = "QHQ5-anRLPzgtiME4fbBD26yvpZ77T_KoByLx_UTLGQ"
+const apiKeyImage = ""
 
 //const principals
 const cityInput = document.querySelector("#city-input")
