@@ -35,7 +35,9 @@ const getWetherData = async(city) =>{
 
 
 const switchClass = () => {
-    Suggetions.classList.toggle('hide')
+    if (!(Suggetions.classList.contains('hide'))){
+        Suggetions.classList.toggle('hide')
+    }
 
     if (WeatherData.classList.contains("hide")) {
         WeatherData.classList.toggle("weather-data")
