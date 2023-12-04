@@ -19,6 +19,7 @@ body{
     /* height: 380px; */
     border-radius: 10px;
     box-shadow: rgba(0,0,0,0.24) 0px 3px 8px;
+    padding-inline: 0.5rem;
 }
 
 .form{
@@ -48,6 +49,26 @@ body{
     background-color: #B6E1F2;
     color: white;
     cursor: pointer;
+}
+
+.buttons-city{
+    background-color: rgb(88, 193, 217);
+    border-radius: 999px;
+    color: white;
+    padding: 0.6rem 1rem;
+    border: white;
+    font-size: medium;
+    object-fit: contain;
+    cursor: pointer;
+}
+.suggetions{
+    margin: 20px;
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    object-fit: contain;
+    /* column-gap: 1rem; */
+    grid-column-gap: 1rem;
+    grid-row-gap: 0.8rem;
 }
 
 .weather-data{

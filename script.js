@@ -1,11 +1,13 @@
 //variables api's
-const apiKey =  ""
+const apiKey =  "f23e435017d6ee279843c3b207b5f0b6"
 const apiCountry = "https://flagsapi.com//flat/64.png"
-const apiKeyImage = ""
+const apiKeyImage = "QHQ5-anRLPzgtiME4fbBD26yvpZ77T_KoByLx_UTLGQ"
 
 //const principals
 const cityInput = document.querySelector("#city-input")
 const searchBtn = document.querySelector("#search")
+const ButtonCities = document.querySelectorAll('.buttons-city')
+const Suggetions = document.querySelector('.suggetions')
 
 //variables
 const cityElement = document.querySelector("#nameCity")
@@ -33,6 +35,8 @@ const getWetherData = async(city) =>{
 
 
 const switchClass = () => {
+    Suggetions.classList.toggle('hide')
+
     if (WeatherData.classList.contains("hide")) {
         WeatherData.classList.toggle("weather-data")
     } else if(WeatherData.className === ""){
@@ -76,6 +80,17 @@ const ImageWeather = async(city) =>{
 }
 
 //events 
+ButtonCities.forEach(button => {
+    button.addEventListener('click', (e)=>{
+        e.preventDefault();
+    
+        const city = button.innerHTML;
+    
+        dataWeather(city);
+        switchClass();
+    }) 
+});
+
 searchBtn.addEventListener("click", (e) =>{
     e.preventDefault()
 
